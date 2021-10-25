@@ -1,9 +1,6 @@
-import './App.css';
+import './styles/app.scss'
+import Header from './components/Header/Header'
 
-
-function Header() {
-  <div>I am going to be a fancy header</div>
-}
 
 
 
