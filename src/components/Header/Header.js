@@ -2,6 +2,8 @@ import './Header.scss'
 import logo from '../../assets/images/Logo/BrainFlix-logo.svg'
 import defaultPic from '../../assets/images/Images/Mohan-muruge.jpg'
 import buttonIcon from '../../assets/images/Icons/upload.svg'
+import magGlass from '../../assets/images/Icons/search.svg'
+
 
 export default function Header () {
   return (
@@ -13,6 +15,7 @@ export default function Header () {
         </a>
           <div className='header__search__container'>
           <form>
+            
             <input className="header__search" type='text' id='search' placeholder='Search'></input>
           </form>
           </div>
