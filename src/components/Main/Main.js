@@ -16,6 +16,10 @@ export default function Main(props) {
     <p> <img src='../../assets/images/Icons/likes.svg'
     alt='this is an icon of a heart'/>{props.videoDetails[0].likes}</p>
     </div>
+
+    <div>
+      <p>{props.videoDetails[0].description}</p>
+    </div>
     
     </>
   )
