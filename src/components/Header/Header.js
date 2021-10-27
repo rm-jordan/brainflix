@@ -3,7 +3,7 @@ import logo from '../../assets/images/Logo/BrainFlix-logo.svg'
 import defaultPic from '../../assets/images/Images/Mohan-muruge.jpg'
 import buttonIcon from '../../assets/images/Icons/upload.svg'
 import magGlass from '../../assets/images/Icons/search.svg'
-
+// set magGlass as background for the actual input of the search bar
 
 export default function Header () {
   return (
