@@ -1,5 +1,7 @@
 import './Main.scss'
-// more than likely will need to import the images as props and pass down as before, something is rendering worry about the styling of it at a later time
+import views from '../../assets/images/Icons/views.svg'
+import likes from '../../assets/images/Icons/likes.svg'
+
 
 
 export default function Main(props) {
@@ -11,9 +13,9 @@ export default function Main(props) {
       <p className='main__date'>{props.videoDetails[0].timestamp}</p>
     </div>
     <div>
-    <p><img src='../../assets/images/Icons/views.svg'
+    <p><img src={views}
     alt='this is an icon of an eye'/> {props.videoDetails[0].views}</p>
-    <p> <img src='../../assets/images/Icons/likes.svg'
+    <p> <img src={likes}
     alt='this is an icon of a heart'/>{props.videoDetails[0].likes}</p>
     </div>
 

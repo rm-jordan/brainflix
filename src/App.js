@@ -16,7 +16,7 @@ function App() {
     <HeroVideo allVideos={allVideos}/>
     <Main videoDetails ={videoDetails}/>
     <CommentBox />
-    <PostedComments />
+    <PostedComments videoDetails={videoDetails}/>
     </>
   );
 }

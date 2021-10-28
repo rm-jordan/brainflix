@@ -1,4 +1,5 @@
 import './PostedComments.scss'
+import defaultImg from '../../assets/images/Images/default.png'
 
 //check out your bandsite and see how you laid this part out so that you can style it properly//
 
@@ -7,11 +8,21 @@ import './PostedComments.scss'
 //you got this//
 
 
-export default function CommentsPosted() {
+export default function CommentsPosted(props) {
   return (
   <section className='posted'>
     <article className='posted__container'>
-      <img src='' alt='' />
+    <img className='posted__img' src={defaultImg} alt='default avatar' />
+        <div>
+          <div>
+            <h4>{props.videoDetails[1].name}</h4>
+            <p>{props.videoDetails[1].timestamp}</p>
+          </div>
+          <p>{props.videoDetails[1].comment}</p>
+        </div>
+    </article>
+    <article className='posted__container'>
+    <img className='posted__img' src={defaultImg} alt='default avatar' />
         <div>
           <div>
             <h4>Name</h4>
@@ -21,17 +32,7 @@ export default function CommentsPosted() {
         </div>
     </article>
     <article className='posted__container'>
-      <img src='' alt='' />
-        <div>
-          <div>
-            <h4>Name</h4>
-            <p>Date</p>
-          </div>
-          <p>This is where the long paragraph goes.</p>
-        </div>
-    </article>
-    <article className='posted__container'>
-      <img src='' alt='' />
+    <img className='posted__img' src={defaultImg} alt='default avatar' />
         <div>
           <div>
             <h4>Name</h4>
