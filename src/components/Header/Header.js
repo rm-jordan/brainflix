@@ -14,12 +14,9 @@ export default function Header () {
         alt='this is the logo for the Brainflix website' />
         </a>
           <div className='header__search__container'>
-          <form>
-            
             <input className="header__search" type='text' id='search' placeholder='Search'></input>
-          </form>
+            <img className = 'header__img' src={defaultPic} alt='small icon of default a person' />
           </div>
-          <img className = 'header__img' src={defaultPic} alt='small icon of default a person' />
       </div>
       <button className='header__button'><img className='header__button__icon' 
       src={buttonIcon} alt='upload icon'
