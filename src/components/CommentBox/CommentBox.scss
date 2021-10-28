@@ -1,0 +1,15 @@
+.commentbox__img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.commentbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.commentbox__form {
+  display: flex;
+  flex-direction: column;
+}

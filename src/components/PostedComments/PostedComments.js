@@ -7,6 +7,7 @@ import defaultImg from '../../assets/images/Images/default.png'
 
 //you got this//
 
+///unsure why the below part will not render
 
 export default function CommentsPosted(props) {
   return (
@@ -15,10 +16,13 @@ export default function CommentsPosted(props) {
     <img className='posted__img' src={defaultImg} alt='default avatar' />
         <div>
           <div>
-            <h4>{props.videoDetails[1].name}</h4>
+
+
+            <h4>{props.videoDetails[0].name}</h4>
             <p>{props.videoDetails[1].timestamp}</p>
           </div>
-          <p>{props.videoDetails[1].comment}</p>
+          <p>{props.videoDetails[0].comment}</p>
+
         </div>
     </article>
     <article className='posted__container'>
