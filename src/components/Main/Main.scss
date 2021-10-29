@@ -1,10 +1,10 @@
-//lots of styling to be done
-
-// * {
-//   border: 1px solid seagreen;
-// }
-
-.flex-test {
-  display: flex;
-  justify-content: space-around;
+.main {
+  padding: 1rem;
+  &__header {
+    font-size: 1.5rem;
+  }
+  &__container {
+    display: flex;
+    justify-content: space-around;
+  }
 }
