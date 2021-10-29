@@ -21,10 +21,10 @@ export default function VideoList(props){
             <img className='videolist__img' 
             src={video.image} alt={video.title} />
               <div>
-                <h2>
+                <h3>
                 {video.title}
-                </h2>
-                <h3>{video.channel}</h3>
+                </h3>
+                <h4>{video.channel}</h4>
               </div>
             </li>
           )
