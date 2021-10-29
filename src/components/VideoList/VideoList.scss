@@ -10,17 +10,22 @@
   li {
     display: flex;
   }
-
+  h2 {
+    font-size: 13px;
+  }
   h3 {
-    font-size: 12px;
+    font-size: 13px;
   }
+}
 
-  h4 {
-    font-size: 10px;
-  }
+.videolist__img__container {
+  padding-top: 0.75rem;
 }
 
 .videolist__img {
-  height: 3rem;
-  width: 3rem;
+  height: 4rem;
+  width: 6rem;
+  border-radius: 4px;
 }
+
+//need to make a container for the images and then space out the menu from there.
