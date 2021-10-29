@@ -11,7 +11,8 @@ import './VideoList.scss'
 export default function VideoList(props){
 
   return (
-    <section>
+    <section className='videolist'>
+      <div className='videolist__container'>
       <ul>
         {props.videoDetails.map((video)=> {
           return (<li key={video.id} onClick={()=> {
@@ -29,6 +30,7 @@ export default function VideoList(props){
           )
         })}
       </ul>
+      </div>
     </section>
   )
 }
