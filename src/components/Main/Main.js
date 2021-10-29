@@ -11,7 +11,7 @@ export default function Main(props) {
     <div className='flex-test'>
     <div className=''>
       <h3 className='main__author'>{props.currentVideo.channel}</h3>
-      <p className='main__date'>{props.currentVideo.timestamp}</p>
+      <p className='main__date'>{new Date(props.currentVideo.timestamp).toLocaleDateString()}</p>
     </div>
     <div>
     <p><img src={views}
