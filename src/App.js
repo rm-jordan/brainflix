@@ -40,7 +40,7 @@ class App extends Component {
     <Main currentVideo={this.state.currentVideo}/>
     <CommentBox />
     <PostedComments videoDetails={videoDetails}/>
-    <VideoList videoDetails={videoDetails} />
+    <VideoList videoDetails={videoDetails} handleVideoChange={this.handleVideoChange} />
     </>
 
   );

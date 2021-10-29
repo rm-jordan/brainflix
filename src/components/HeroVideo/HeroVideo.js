@@ -11,10 +11,7 @@ import './HeroVideo.scss'
 
 function HeroVideo(props) {
   return (
-    <section
-    onClick={() => {
-      props.handleVideoChange(props.id);
-    }}>
+    <section>
       <video className='video__player' controls poster={props.currentVideo.image}>
       </video>
     </section>

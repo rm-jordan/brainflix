@@ -14,7 +14,9 @@ export default function VideoList(props){
     <section>
       <ul>
         {props.videoDetails.map((video)=> {
-          return (<li>
+          return (<li key={video.id} onClick={()=> {
+            props.handleVideoChange(video.id)
+          }}>
             <img className='videolist__img' 
             src={video.image} alt={video.title} />
               <div>
