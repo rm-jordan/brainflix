@@ -16,7 +16,9 @@ export default function Header () {
         </a>
         </div>
           <div className='header__search__container'>
-            <input className="header__search" type='text' id='search' placeholder='Search'></input>
+            <input className="header__search" type='text' id='search' 
+            placeholder='Search'>
+            </input>
             <img className = 'header__img' src={defaultPic} alt='small icon of default a person' />
           </div>
 
