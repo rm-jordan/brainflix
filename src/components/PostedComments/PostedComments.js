@@ -17,7 +17,7 @@ export default function CommentsPosted(props) {
         <div className='posted__comment'>
           <div  className='posted__info'>
             <h4>{comment.name}</h4>
-            <p>{comment.timestamp}</p>
+            <p>{new Date(comment.timestamp).toLocaleDateString()}</p>
           </div>
           <p>{comment.comment}</p>
         </div>

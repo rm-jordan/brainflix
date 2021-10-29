@@ -6,10 +6,15 @@ import './HeroVideo.scss'
 // create a header poster as baseline for the video?
 
 // title will be based off of the current video state
+// so the title is in the next component and I will need to pass that down
+
 
 function HeroVideo(props) {
   return (
-    <section>
+    <section
+    onClick={() => {
+      props.handleVideoChange(props.id);
+    }}>
       <video className='video__player' controls poster={props.currentVideo.image}>
       </video>
     </section>

@@ -18,12 +18,21 @@ class App extends Component {
     // look at the example code so we can figure out how to handle this with an onClick event
   }
 
-  // handleVideoChange = (id) => {
-  //   console.log('handleVideoChange' id);
-  // }
+  handleVideoChange = (id) => {
+    console.log('handleVideoChange', id);
 
 
+  const foundVideo = this.state.video.find((video) =>{
+    return video.id === id;
+  });
+    this.setState({
+      currentVideo: foundVideo
+    });
+}
+// I think something is messed up in my return
   render() {
+    const {currentVideo} =this.state
+    console.log(currentVideo);
   return (
     <>
     <Header />
