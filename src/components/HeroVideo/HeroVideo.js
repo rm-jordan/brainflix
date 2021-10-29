@@ -7,7 +7,7 @@ import './HeroVideo.scss'
 
 // title will be based off of the current video state
 
-export default function HeroVideo(props) {
+function HeroVideo(props) {
   return (
     <section>
       <video className='video__player' controls poster={props.currentVideo.image}>
@@ -15,3 +15,4 @@ export default function HeroVideo(props) {
     </section>
   )
 }
+export default HeroVideo;

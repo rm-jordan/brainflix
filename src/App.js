@@ -13,9 +13,15 @@ import videoDetails from './data/video-details.json'
 class App extends Component {
 
   state = {
+    video: videoDetails,
     currentVideo: videoDetails[0],
-    // videoClicked: ''
+    // look at the example code so we can figure out how to handle this with an onClick event
   }
+
+  // handleVideoChange = (id) => {
+  //   console.log('handleVideoChange' id);
+  // }
+
 
   render() {
   return (

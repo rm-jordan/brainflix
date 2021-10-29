@@ -15,11 +15,13 @@ export default function VideoList(props){
       <ul>
         {props.videoDetails.map((video)=> {
           return (<li>
-            <img src={video.image} alt={video.title} />
+            <img className='videolist__img' 
+            src={video.image} alt={video.title} />
               <div>
                 <h2>
                 {video.title}
                 </h2>
+                <h3>{video.channel}</h3>
               </div>
             </li>
           )
