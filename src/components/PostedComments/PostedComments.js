@@ -1,9 +1,8 @@
 import './PostedComments.scss'
 import defaultImg from '../../assets/images/Images/default.png'
 
+//needs lots of styling work, will have to reference setup from bandsite for similar characteristics of html alignments
 
-
-///unsure why the below part will not render
 
 export default function CommentsPosted(props) {
   return (
@@ -11,14 +10,12 @@ export default function CommentsPosted(props) {
 
   {props.videoDetails[0].comments.map(
     (comment) => (
-      // console.log(comment)
-  
         <article className='posted__container'>
     <img className='posted__img' 
     src={defaultImg} 
     alt='default avatar' />
-        <div>
-          <div>
+        <div className='posted__comment'>
+          <div  className='posted__info'>
             <h4>{comment.name}</h4>
             <p>{comment.timestamp}</p>
           </div>
