@@ -3,13 +3,12 @@
 }
 
 .header {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // padding-top: 1rem;
-  // align-items: center;
   &__container {
     width: 100%;
+    justify-content: center;
+  }
+  &__logo__container {
+    display: flex;
     justify-content: center;
   }
   &__logo__img {

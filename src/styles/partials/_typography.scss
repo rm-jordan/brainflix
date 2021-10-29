@@ -1,10 +1,6 @@
-body {
-  font-family: "AvenirNext LT Pro";
-}
-
 @font-face {
   font-family: "AvenirNext LT Pro";
-  src: url("../../Assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -12,15 +8,7 @@ body {
 
 @font-face {
   font-family: "AvenirNext LT Pro";
-  src: url("../../Assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "AvenirNext LT Pro";
-  src: url("../../Assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
