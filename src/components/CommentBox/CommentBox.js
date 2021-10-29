@@ -11,6 +11,7 @@ export default function Comments(){
   return (
     <section className='commentbox'>
     <h2 className='commentbox__header'>JOIN THE CONVERSATION</h2>
+    <div className='commentbox__container'>
     <img className = 'commentbox__img' src={defaultPic} alt='small icon of default a person' />
       <form className='commentbox__form'>
         <textarea className='commentbox__textarea' placeholder='Add a new comment'></textarea>
@@ -19,6 +20,7 @@ export default function Comments(){
         src={plus} alt='upload icon'
         />COMMENT</button>
       </form>
+      </div>
     </section>
   )
 }
