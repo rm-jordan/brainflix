@@ -1,17 +1,5 @@
-// section {
-//   padding: 0rem 1rem;
-// }
-//the image does a full bleed!
-
-// .video {
-//   padding: 1rem 0rem;
-//   &__player__container {
-//     max-width: 310px;
-//   }
-//   &__player {
-//     max-width: 310px;
-//   }
-// }
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
 
 .video {
   padding: 1rem 0rem;
