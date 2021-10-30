@@ -4,7 +4,7 @@
 .header {
   padding: 1rem 1rem;
   @include small-tablet {
-    padding: 0rem 1.5rem;
+    padding: 1rem 1.5rem;
   }
   &__container {
     display: flex;

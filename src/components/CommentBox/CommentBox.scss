@@ -36,6 +36,9 @@
     @include midsize-phone {
       width: 100%;
     }
+    @include tablet {
+      flex-direction: row;
+    }
   }
   &__textarea {
     width: 100%;
@@ -48,6 +51,10 @@
     margin-bottom: 1rem;
     // color: #323232;
     font-size: 0.875rem;
+    @include tablet {
+      width: 70%;
+      height: 40px;
+    }
   }
   &__button {
     border: none;
@@ -56,6 +63,11 @@
     background-color: #0095ff;
     color: #ffffff;
     position: relative;
+    @include tablet {
+      width: 25%;
+      height: 40px;
+      margin-left: 2rem;
+    }
   }
   &__button__icon {
     position: absolute;
