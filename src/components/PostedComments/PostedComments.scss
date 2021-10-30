@@ -1,11 +1,11 @@
 .posted {
+  font-size: 13px;
   padding: 0rem 1rem;
   &__container {
     display: flex;
   }
   &__img {
     align-self: flex-start;
-    color: black;
     height: 2.25rem;
     width: 2.25rem;
     border-radius: 50%;
