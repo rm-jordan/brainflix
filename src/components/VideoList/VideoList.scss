@@ -2,6 +2,9 @@
 @use "../../styles/partials/mixins" as *;
 
 .videolist {
+  @include small-tablet {
+    padding: 0rem 1.5rem;
+  }
   &__container {
     padding: 0rem 1rem;
     max-width: 280px;

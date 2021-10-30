@@ -3,6 +3,9 @@
 
 .header {
   padding: 1rem 1rem;
+  @include small-tablet {
+    padding: 0rem 1.5rem;
+  }
   &__container {
     width: 100%;
     justify-content: center;
@@ -27,7 +30,7 @@
     margin-left: 1.25rem;
   }
   &__button {
-    width: 20rem;
+    width: 100%;
     padding: 0.5rem;
     border: none;
     border-radius: 4px;
@@ -54,5 +57,7 @@
     padding: 0.5rem 0rem 0.5rem 2.5rem;
     border-radius: 4px;
     font-size: 1.2rem;
+    background-color: #fafafa;
+    font-size: 13px;
   }
 }

@@ -4,6 +4,9 @@
 .posted {
   font-size: 13px;
   padding: 0rem 1rem;
+  @include small-tablet {
+    padding: 0rem 1.5rem;
+  }
   &__container {
     display: flex;
     border-bottom: 1px solid #e1e1e1;

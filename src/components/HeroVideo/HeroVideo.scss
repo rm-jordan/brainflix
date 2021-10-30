@@ -2,7 +2,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .video {
-  padding: 1rem 0rem;
+  background-color: black;
   &__player__container {
     position: relative;
     padding-bottom: 56.25%;
