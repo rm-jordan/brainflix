@@ -19,7 +19,7 @@
   &__form {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 82%;
   }
   &__textarea {
     width: 100%;
@@ -34,9 +34,16 @@
   }
   &__button {
     border: none;
+    padding: 0.5rem;
     border-radius: 4px;
     background-color: #0095ff;
     color: #ffffff;
+    position: relative;
+  }
+  &__button__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
 
