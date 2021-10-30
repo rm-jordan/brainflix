@@ -1,12 +1,11 @@
 // need to bring in fonts here
 @use "../styles/partials/typography" as *;
 @use "../styles/partials/mixins" as *;
-// @use "../styles/partials/global" as *;
 
-* {
-  box-sizing: border-box;
-  border: 1px solid green;
-}
+// * {
+//   box-sizing: border-box;
+//   border: 1px solid green;
+// }
 
 html {
   font-size: 16px;

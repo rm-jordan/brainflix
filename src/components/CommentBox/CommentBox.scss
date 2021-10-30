@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: column;
   padding: 0rem 1rem;
+  &__section__container {
+    padding: 0rem 1rem 1rem 1rem;
+    border-bottom: 1px solid #e1e1e1;
+  }
   &__container {
     display: flex;
   }

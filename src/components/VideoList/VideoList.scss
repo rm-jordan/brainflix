@@ -1,7 +1,10 @@
 .videolist {
   &__container {
     padding: 0rem 1rem;
-    width: 100%;
+    max-width: 280px;
+    // @include tablet {
+    //   width: 100%;
+    // }
   }
   ul {
     list-style-type: none;
