@@ -14,7 +14,8 @@ export default function Comments(){
     <div className='commentbox__container'>
     <img className = 'commentbox__img' src={defaultPic} alt='small icon of default a person' />
       <form className='commentbox__form'>
-        <textarea className='commentbox__textarea' placeholder='Add a new comment'></textarea>
+        <textarea className='commentbox__textarea' placeholder='  Add a new comment'>
+        </textarea>
         <button className='commentbox__button'>
         <img className='commentbox__button__icon' 
         src={plus} alt='upload icon'
