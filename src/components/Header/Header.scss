@@ -1,5 +1,5 @@
 .header {
-  padding: 0rem 1rem;
+  padding: 1rem 1rem;
   &__container {
     width: 100%;
     justify-content: center;
@@ -7,6 +7,7 @@
   &__logo__container {
     display: flex;
     justify-content: center;
+    padding-bottom: 1rem;
   }
   &__logo__img {
     height: 2rem;

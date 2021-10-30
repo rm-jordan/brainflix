@@ -17,12 +17,13 @@ export default function Main(props) {
     <p><img src={views}
     alt='this is an icon of an eye'/> {props.currentVideo.views}</p>
     <p> <img src={likes}
-    alt='this is an icon of a heart'/>{props.currentVideo.likes}</p>
+    alt='this is an icon of a heart'/> {props.currentVideo.likes} </p>
     </div>
     </div>
 
     <div>
       <p>{props.currentVideo.description}</p>
+      <h3>3 Comments</h3>
     </div>
     
     </section>
