@@ -8,8 +8,8 @@
   &__container {
     padding: 0rem 1rem;
     max-width: 280px;
-    @include tablet {
-      width: 100%;
+    @include midsize-phone {
+      width: 300px;
     }
   }
   ul {

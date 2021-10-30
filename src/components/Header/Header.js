@@ -9,11 +9,11 @@ export default function Header () {
   return (
     <header className="header">
       <div className ="header__container">
+      <a className="header__logo" href= "../../../public/index.html" >
+      <img className="header__logo__img"  src={logo} 
+      alt='this is the logo for the Brainflix website' />
+      </a>
         <div className='header__logo__container'>
-        <a className="header__logo" href= "../../../public/index.html" >
-        <img className="header__logo__img"  src={logo} 
-        alt='this is the logo for the Brainflix website' />
-        </a>
         </div>
           <div className='header__search__container'>
             <input className="header__search" type='text' id='search' 
