@@ -17,6 +17,9 @@
     @include small-tablet {
       justify-content: space-around;
     }
+    @include tablet {
+      justify-content: space-between;
+    }
   }
 }
 
@@ -25,6 +28,25 @@ p {
   font-size: 13px;
 }
 
+.main__left {
+  @include tablet {
+    display: flex;
+  }
+  p {
+    @include tablet {
+      margin-left: 2rem;
+    }
+  }
+}
 .main__right {
   padding-right: 2rem;
+  @include tablet {
+    display: flex;
+    padding: 0rem;
+  }
+  p {
+    @include tablet {
+      margin-right: 2rem;
+    }
+  }
 }
