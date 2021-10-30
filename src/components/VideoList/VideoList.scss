@@ -21,16 +21,12 @@
     font-weight: 100;
   }
 }
-
-//perhaps set the height and width of the image container as fixed,then scale the image at height and width of 100% from there, making the container larger as we go?
 .videolist__img__container {
-  padding-top: 0.75rem;
+  padding-top: 1rem;
 }
 
 .videolist__img {
   height: 4rem;
-  // width: 100%;
-  background-size: cover;
   width: 6rem;
   border-radius: 4px;
 }

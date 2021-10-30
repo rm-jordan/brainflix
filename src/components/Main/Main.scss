@@ -5,10 +5,15 @@
   }
   &__container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 }
 
+h3,
 p {
   font-size: 13px;
+}
+
+.main__right {
+  padding-right: 2rem;
 }

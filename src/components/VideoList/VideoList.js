@@ -6,6 +6,7 @@ export default function VideoList(props){
   return (
     <section className='videolist'>
       <div className='videolist__container'>
+      <h2>Next Videos</h2>
       <ul>
         {props.videoDetails.map((video)=> {
           return (<li key={video.id} onClick={()=> {
