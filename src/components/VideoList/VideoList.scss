@@ -5,6 +5,12 @@
   @include small-tablet {
     padding: 0rem 1.5rem;
   }
+  @include tablet {
+    padding: 0.5rem 2rem;
+  }
+  @include desktop {
+    padding: 0.5rem 3rem;
+  }
   &__container {
     padding: 0rem 1rem;
     max-width: 280px;

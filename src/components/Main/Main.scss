@@ -6,6 +6,12 @@
   @include small-tablet {
     padding: 0rem 1.5rem;
   }
+  @include tablet {
+    padding: 0.5rem 2rem;
+  }
+  @include desktop {
+    padding: 0.5rem 3rem;
+  }
   &__header {
     font-size: 1.5rem;
     @include tablet {
