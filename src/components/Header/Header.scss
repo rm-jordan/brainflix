@@ -74,6 +74,10 @@
     background-color: #0095ff;
     color: #ffffff;
     position: relative;
+    &:hover {
+      color: #ffffff;
+      background-color: #0065ad;
+    }
     @include tablet {
       max-width: 155px;
     }

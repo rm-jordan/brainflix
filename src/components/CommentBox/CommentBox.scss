@@ -70,6 +70,10 @@
     color: #ffffff;
     position: relative;
     height: 40px;
+    &:hover {
+      color: #ffffff;
+      background-color: #0065ad;
+    }
     @include tablet {
       width: 10rem;
       margin-left: 2rem;
