@@ -26,8 +26,6 @@ class App extends Component {
     });
   };
 
-  //need to make the video disappear when selected
-
   // I believe how I have this layed out might be inhibiting why I cannot put the videolist to the side
   render() {
     const { currentVideo } = this.state;
