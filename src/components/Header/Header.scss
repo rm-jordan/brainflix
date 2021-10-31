@@ -6,12 +6,18 @@
   @include small-tablet {
     padding: 1rem 1.5rem;
   }
+  @include tablet {
+    padding: 0rem 2rem;
+  }
   &__container {
     display: flex;
     width: 100%;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    @include tablet {
+      flex-direction: row;
+    }
   }
   &__logo__img {
     height: 2rem;
@@ -20,12 +26,35 @@
     display: flex;
     width: 100%;
     align-items: center;
+    @include tablet {
+      margin-left: 3rem;
+    }
   }
   &__img {
     height: 2.25rem;
     width: 2.25rem;
     border-radius: 50%;
     margin-left: 1.25rem;
+    @include tablet {
+      visibility: hidden;
+      display: none;
+      height: 0rem;
+      width: 0rem;
+    }
+  }
+  &__img--bottom {
+    height: 0rem;
+    width: 0rem;
+    border-radius: 50%;
+    margin-left: 1.25rem;
+    visibility: hidden;
+    @include tablet {
+      height: 2.25rem;
+      width: 2.25rem;
+      border-radius: 50%;
+      margin-left: 1.25rem;
+      visibility: visible;
+    }
   }
   &__button {
     width: 100%;
@@ -46,6 +75,10 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    @include tablet {
+      padding-top: 0rem;
+      width: 51%;
+    }
   }
   &__search {
     background-repeat: no-repeat;

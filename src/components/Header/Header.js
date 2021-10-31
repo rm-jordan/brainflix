@@ -38,6 +38,11 @@ export default function Header() {
             UPLOAD
           </button>
         </div>
+        <img
+          className="header__img--bottom"
+          src={defaultPic}
+          alt="small icon of default a person"
+        />
       </div>
     </header>
   );
