@@ -13,9 +13,9 @@
   }
   &__container {
     padding: 0rem 1rem;
-    max-width: 280px;
+    max-width: 17.5rem;
     @include midsize-phone {
-      width: 300px;
+      width: 18.75rem;
     }
   }
   ul {
@@ -28,11 +28,11 @@
   }
   h2 {
     padding-left: 1rem;
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
   h3 {
     padding-left: 1rem;
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 100;
   }
 }
