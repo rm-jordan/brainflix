@@ -25,6 +25,13 @@ class App extends Component {
     });
   };
   // I want to flex the content of the videolist to the right hand side @desktop...
+
+  // make it <Header />
+  // then <Allothercomponents />
+  //then <Videolist />
+  //then flex the videolist to the <Allothercomponents />
+  // or have all the other components in a large file and flex things there
+
   render() {
     const { currentVideo } = this.state;
     console.log(currentVideo);
@@ -33,18 +40,12 @@ class App extends Component {
         <Header />
         <HeroVideo currentVideo={this.state.currentVideo} />
         <Main currentVideo={this.state.currentVideo} />
-        <div className="main-flex">
-          <div className="flex-test">
-            <CommentBox />
-            <PostedComments videoDetails={videoDetails} />
-          </div>
-          <div className="flex-child">
-            <VideoList
-              videoDetails={videoDetails}
-              handleVideoChange={this.handleVideoChange}
-            />
-          </div>
-        </div>
+        <CommentBox />
+        <PostedComments videoDetails={videoDetails} />
+        <VideoList
+          videoDetails={videoDetails}
+          handleVideoChange={this.handleVideoChange}
+        />
       </>
     );
   }
