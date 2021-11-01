@@ -12,7 +12,6 @@ class App extends Component {
   state = {
     video: videoDetails,
     currentVideo: videoDetails[0],
-    // look at the example code so we can figure out how to handle this with an onClick event
   };
 
   handleVideoChange = (id) => {
@@ -25,8 +24,7 @@ class App extends Component {
       currentVideo: foundVideo,
     });
   };
-
-  // I believe how I have this layed out might be inhibiting why I cannot put the videolist to the side
+  // I want to flex the content of the videolist to the right hand side @desktop...
   render() {
     const { currentVideo } = this.state;
     console.log(currentVideo);
@@ -35,12 +33,18 @@ class App extends Component {
         <Header />
         <HeroVideo currentVideo={this.state.currentVideo} />
         <Main currentVideo={this.state.currentVideo} />
-        <CommentBox />
-        <PostedComments videoDetails={videoDetails} />
-        <VideoList
-          videoDetails={videoDetails}
-          handleVideoChange={this.handleVideoChange}
-        />
+        <div className="main-flex">
+          <div className="flex-test">
+            <CommentBox />
+            <PostedComments videoDetails={videoDetails} />
+          </div>
+          <div className="flex-child">
+            <VideoList
+              videoDetails={videoDetails}
+              handleVideoChange={this.handleVideoChange}
+            />
+          </div>
+        </div>
       </>
     );
   }
