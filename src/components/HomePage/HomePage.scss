@@ -1,0 +1,8 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+
+.homepage__container {
+  @include desktop {
+    display: flex;
+  }
+}

@@ -1,12 +1,8 @@
 import { Component } from "react";
 import "./styles/app.scss";
 import Header from "./components/Header/Header";
-import HeroVideo from "./components/HeroVideo/HeroVideo";
-import Main from "./components/Main/Main";
-import CommentBox from "./components/CommentBox/CommentBox";
-import PostedComments from "./components/PostedComments/PostedComments";
-import VideoList from "./components/VideoList/VideoList";
 import videoDetails from "./data/video-details.json";
+import HomePage from "./components/HomePage/HomePage";
 
 class App extends Component {
   state = {
@@ -24,13 +20,6 @@ class App extends Component {
       currentVideo: foundVideo,
     });
   };
-  // I want to flex the content of the videolist to the right hand side @desktop...
-
-  // make it <Header />
-  // then <Allothercomponents />
-  //then <Videolist />
-  //then flex the videolist to the <Allothercomponents />
-  // or have all the other components in a large file and flex things there
 
   render() {
     const { currentVideo } = this.state;
@@ -38,11 +27,8 @@ class App extends Component {
     return (
       <>
         <Header />
-        <HeroVideo currentVideo={this.state.currentVideo} />
-        <Main currentVideo={this.state.currentVideo} />
-        <CommentBox />
-        <PostedComments videoDetails={videoDetails} />
-        <VideoList
+        <HomePage
+          currentVideo={this.state.currentVideo}
           videoDetails={videoDetails}
           handleVideoChange={this.handleVideoChange}
         />
