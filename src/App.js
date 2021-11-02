@@ -21,6 +21,17 @@ class App extends Component {
     });
   };
 
+  // <Header />
+
+  // <Switch>
+
+  // Route for the content in <HomePage />
+  //API info will go into the <HomePage /> ???
+
+  // Route for the content in the <UploadPage /> which somehow gets information similarily or from the homepage parameters?
+
+  // </Switch>
+
   render() {
     const { currentVideo } = this.state;
     console.log(currentVideo);
