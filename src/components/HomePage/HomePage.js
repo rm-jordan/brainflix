@@ -16,6 +16,7 @@ import "./HomePage.scss";
 
 // GET: videos/ :id
 
+
 export default function HomePage({
   currentVideo,
   videoDetails,

@@ -4,6 +4,10 @@ import Header from "./components/Header/Header";
 import videoDetails from "./data/video-details.json";
 import HomePage from "./components/HomePage/HomePage";
 
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import UploadPage from "./pages/UploadPage/UploadPage";
+
 class App extends Component {
   state = {
     video: videoDetails,
@@ -38,11 +42,20 @@ class App extends Component {
     return (
       <>
         <Header />
-        <HomePage
-          currentVideo={this.state.currentVideo}
-          videoDetails={videoDetails}
-          handleVideoChange={this.handleVideoChange}
-        />
+        <Router>
+          <Switch>
+            <Route path="/" exact>
+              <HomePage
+                currentVideo={this.state.currentVideo}
+                videoDetails={videoDetails}
+                handleVideoChange={this.handleVideoChange}
+              />
+            </Route>
+            <Route path="/upload" exact>
+              <UploadPage />
+            </Route>
+          </Switch>
+        </Router>
       </>
     );
   }
