@@ -2,18 +2,23 @@ import "./Header.scss";
 import logo from "../../assets/images/Logo/BrainFlix-logo.svg";
 import defaultPic from "../../assets/images/Images/Mohan-muruge.jpg";
 import buttonIcon from "../../assets/images/Icons/upload.svg";
+import { Link } from "react-router-dom";
+import HomePage from "../HomePage/HomePage";
+
+// ////////my link is not working?
+// <Link className="header__logo" to="/" exact component={HomePage}></Link> will not change pages
 
 export default function Header() {
   return (
     <header className="header">
       <div className="header__container">
-        <a className="header__logo" href="../../../public/index.html">
+        <Link className="header__logo" to="/" exact>
           <img
             className="header__logo__img"
             src={logo}
             alt="this is the logo for the Brainflix website"
           />
-        </a>
+        </Link>
         <div className="header__search__container">
           <input
             className="header__search"

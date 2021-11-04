@@ -5,6 +5,7 @@ import PostedComments from "../PostedComments/PostedComments";
 import Main from "../Main/Main";
 import VideoList from "../VideoList/VideoList";
 import "./HomePage.scss";
+import videoDetails from "../../data/video-details.json";
 
 // here I will need to load some information from the API and render my components
 
@@ -16,28 +17,49 @@ import "./HomePage.scss";
 
 // GET: videos/ :id
 
+// make homepage class based component
 
-export default function HomePage({
-  currentVideo,
-  videoDetails,
-  handleVideoChange,
-}) {
-  return (
-    <>
-      <HeroVideo currentVideo={currentVideo} />
-      <div className="homepage__container">
-        <div>
-          <Main currentVideo={currentVideo} />
-          <CommentBox />
-          <PostedComments videoDetails={videoDetails} />
+//   currentVideo, <--taken from original
+// videoDetails,
+// handleVideoChange,
+
+class HomePage extends React.Component {
+  state = {
+    video: videoDetails,
+    currentVideo: videoDetails[0],
+  };
+
+  handleVideoChange = (id) => {
+    console.log("handleVideoChange", id);
+
+    const foundVideo = this.state.video.find((video) => {
+      return video.id === id;
+    });
+    this.setState({
+      currentVideo: foundVideo,
+    });
+  };
+
+  render() {
+    return (
+      <>
+        <HeroVideo currentVideo={this.state.currentVideo} />
+        <div className="homepage__container">
+          <div>
+            <Main currentVideo={this.state.currentVideo} />
+            <CommentBox />
+            <PostedComments videoDetails={videoDetails} />
+          </div>
+          <div>
+            <VideoList
+              videoDetails={videoDetails}
+              handleVideoChange={this.handleVideoChange}
+            />
+          </div>
         </div>
-        <div>
-          <VideoList
-            videoDetails={videoDetails}
-            handleVideoChange={handleVideoChange}
-          />
-        </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  }
 }
+
+export default HomePage;

@@ -9,51 +9,16 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import UploadPage from "./pages/UploadPage/UploadPage";
 
 class App extends Component {
-  state = {
-    video: videoDetails,
-    currentVideo: videoDetails[0],
-  };
-
-  handleVideoChange = (id) => {
-    console.log("handleVideoChange", id);
-
-    const foundVideo = this.state.video.find((video) => {
-      return video.id === id;
-    });
-    this.setState({
-      currentVideo: foundVideo,
-    });
-  };
-
-  // <Header />
-
-  // <Switch>
-
-  // Route for the content in <HomePage />
-  //API info will go into the <HomePage /> ???
-
-  // Route for the content in the <UploadPage /> which somehow gets information similarily or from the homepage parameters?
-
-  // </Switch>
-
   render() {
-    const { currentVideo } = this.state;
-    console.log(currentVideo);
     return (
       <>
-        <Header />
         <Router>
+          <Header />
           <Switch>
             <Route path="/" exact>
-              <HomePage
-                currentVideo={this.state.currentVideo}
-                videoDetails={videoDetails}
-                handleVideoChange={this.handleVideoChange}
-              />
+              <HomePage />
             </Route>
-            <Route path="/upload" exact>
-              <UploadPage />
-            </Route>
+            <Route path="/upload" exact component={UploadPage}></Route>
           </Switch>
         </Router>
       </>
