@@ -15,12 +15,16 @@ export default function Main(props) {
         </div>
         <div className="main__right">
           <p>
-            <img src={views} alt="this is an icon of an eye" />{" "}
+            <img className="icon" src={views} alt="this is an icon of an eye" />{" "}
             {props.currentVideo.views}
           </p>
           <p>
             {" "}
-            <img src={likes} alt="this is an icon of a heart" />{" "}
+            <img
+              className="icon"
+              src={likes}
+              alt="this is an icon of a heart"
+            />{" "}
             {props.currentVideo.likes}{" "}
           </p>
         </div>

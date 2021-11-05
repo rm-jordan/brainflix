@@ -6,8 +6,7 @@ import Main from "../Main/Main";
 import VideoList from "../VideoList/VideoList";
 import "./HomePage.scss";
 import videoDetails from "../../data/video-details.json";
-
-// here I will need to load some information from the API and render my components
+import axios from "axios";
 
 // {
 //   "api_key": "47ffd825-f3d6-483b-ae09-531887cd1206"
@@ -19,15 +18,26 @@ import videoDetails from "../../data/video-details.json";
 
 // make homepage class based component
 
-//   currentVideo, <--taken from original
-// videoDetails,
-// handleVideoChange,
-
 class HomePage extends React.Component {
   state = {
     video: videoDetails,
     currentVideo: videoDetails[0],
   };
+
+  //need to get the videolist information
+  // may create api key and url variable later
+
+  componentDidMount() {
+    axios
+      .get(
+        `https://project-2-api.herokuapp.com/videos?api_key=47ffd825-f3d6-483b-ae09-531887cd1206`
+      )
+      .then((response) => {
+        const getVideoList = response.data;
+        console.log(getVideoList);
+      })
+      .catch();
+  }
 
   handleVideoChange = (id) => {
     console.log("handleVideoChange", id);
@@ -39,6 +49,9 @@ class HomePage extends React.Component {
       currentVideo: foundVideo,
     });
   };
+  componentDidUpdate() {
+    console.log(this.props);
+  }
 
   render() {
     return (

@@ -1,5 +1,6 @@
 import "./VideoList.scss";
 import { Link } from "react-router-dom";
+//removed on click event
 
 export default function VideoList(props) {
   return (
@@ -9,23 +10,20 @@ export default function VideoList(props) {
         <ul>
           {props.videoDetails.map((video) => {
             return (
-              <li
-                key={video.id}
-                onClick={() => {
-                  props.handleVideoChange(video.id);
-                }}
-              >
-                <div className="videolist__img__container">
-                  <img
-                    className="videolist__img"
-                    src={video.image}
-                    alt={video.title}
-                  />
-                </div>
-                <div>
-                  <h2>{video.title}</h2>
-                  <h3>{video.channel}</h3>
-                </div>
+              <li key={video.id}>
+                <Link to={"/videos/" + video.id}>
+                  <div className="videolist__img__container">
+                    <img
+                      className="videolist__img"
+                      src={video.image}
+                      alt={video.title}
+                    />
+                  </div>
+                  <div>
+                    <h2>{video.title}</h2>
+                    <h3>{video.channel}</h3>
+                  </div>
+                </Link>
               </li>
             );
           })}
