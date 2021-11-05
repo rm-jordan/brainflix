@@ -8,7 +8,7 @@ export default function VideoList(props) {
       <h2>Next Videos</h2>
       <div className="videolist__container">
         <ul>
-          {props.videoDetails.map((video) => {
+          {props.video.map((video) => {
             return (
               <li key={video.id}>
                 <Link to={"/videos/" + video.id}>

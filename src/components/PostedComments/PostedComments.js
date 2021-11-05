@@ -4,7 +4,7 @@ import defaultImg from "../../assets/images/Images/default.png";
 export default function CommentsPosted(props) {
   return (
     <section className="posted">
-      {props.videoDetails[0].comments.map((comment) => (
+      {props.currentVideo.comments.map((comment) => (
         <article className="posted__container">
           <img className="posted__img" src={defaultImg} alt="default avatar" />
           <div className="posted__comment">

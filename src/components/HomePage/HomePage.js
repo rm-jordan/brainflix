@@ -5,7 +5,7 @@ import PostedComments from "../PostedComments/PostedComments";
 import Main from "../Main/Main";
 import VideoList from "../VideoList/VideoList";
 import "./HomePage.scss";
-import videoDetails from "../../data/video-details.json";
+// import videoDetails from "../../data/video-details.json";
 import axios from "axios";
 
 // {
@@ -21,10 +21,13 @@ import axios from "axios";
 class HomePage extends React.Component {
   state = {
     // video & currentVideo from the json need replacing
-    video: videoDetails,
-    currentVideo: videoDetails[0],
-    sideBar: [],
-    getVideoList: [],
+    video: [],
+    currentVideo: null,
+    comments: [],
+    mainContent: [],
+    // video & currentVideo from the json need replacing
+
+    // need to set things for other changes like comments and the photo
   };
 
   //need to get the videolist information
@@ -37,34 +40,30 @@ class HomePage extends React.Component {
         `https://project-2-api.herokuapp.com/videos?api_key=47ffd825-f3d6-483b-ae09-531887cd1206`
       )
       .then((response) => {
-        const getVideoList = response.data;
-        console.log("videolist call", getVideoList); // <-- working!
+        //set all video in state, inside callback calling get video with the first object in the array
+        this.setState({ video: response.data }, () => {
+          this.getVideo(this.state.video[0].id);
+        });
       })
       .catch((error) => console.log("there is an error", error));
-    // I believe I need to get the video id from the "main video" and then try and change it based on the other videos not being the "main video", could I use the main id directly in the call? will the response work from that? video id: 84e96018-4022-434e-80bf-000ce4cd12b8
-    // will try and use after /videos but before the key
+  }
 
-    // the above call failed -- api documentation shows id: '1af0jruup5gu' on response body example -- will try
-    //nope was missing slash from initial call
-    // response now working! <--boss!
+  //makes this more reusable .. used to update active video state
+  getVideo = (id) => {
     axios
       .get(
-        `https://project-2-api.herokuapp.com/videos/84e96018-4022-434e-80bf-000ce4cd12b8?api_key=47ffd825-f3d6-483b-ae09-531887cd1206`
+        `https://project-2-api.herokuapp.com/videos/${id}?api_key=47ffd825-f3d6-483b-ae09-531887cd1206`
       )
       .then((response) => {
-        // use the videoDetails for the state change
-        console.log("initial response", response); //<-- think I need the var
-        // replace videoDetails var with sideBar
-        let sideBar = getVideoList.filter(
-          (video) => video.id !== "84e96018-4022-434e-80bf-000ce4cd12b8"
-        );
-        console.log("this is the sidebar", sideBar);
-        // need to create variables for the comments and to fill the data under the video, then set the state to render the data??????
+        this.setState({ currentVideo: response.data });
+        console.log("initial response", response);
       })
       .catch((error) => {
         console.log("error at call", error);
       });
-  }
+  };
+
+  // I think all I have to do now is pass things down to the components below?
 
   // then I need to see if my componentDidUpdate
   // use this to update my current state of the video
@@ -74,21 +73,49 @@ class HomePage extends React.Component {
 
   // }
 
-  handleVideoChange = (id) => {
-    console.log("handleVideoChange", id);
+  // handleVideoChange = (id) => {
+  //   console.log("handleVideoChange", id);
 
-    const foundVideo = this.state.video.find((video) => {
-      return video.id === id;
-    });
-    this.setState({
-      currentVideo: foundVideo,
-    });
-  };
-  componentDidUpdate() {
-    console.log(this.props);
+  //   const foundVideo = this.state.video.find((video) => {
+  //     return video.id === id;
+  //   });
+  //   this.setState({
+  //     currentVideo: foundVideo,
+  //   });
+  // };
+  componentDidUpdate(prevProps) {
+    // console.log("I am the update", this.props);
+    // need to find the match, params in an {}
+    if (prevProps.match !== this.props.match) {
+      // I need to get some info to set the state inside the components using params
+      axios
+        .get(
+          `https://project-2-api.herokuapp.com/videos/${this.props.match.params.id}?api_key=47ffd825-f3d6-483b-ae09-531887cd1206`
+        )
+        .then((response) => {
+          console.log("didUpdate", response);
+          //when I clicked on the photo in the menu a response
+          const mainContent = response.data;
+          console.log("mainContent", mainContent);
+          const comments = response.data.comments;
+          console.log("comments", comments);
+          // above works when clicking on videolist
+          // need  a filter for the videoList
+          const videoBar = this.state.video.filter(
+            (video) => video.id !== this.props.match.params.id
+          );
+          this.setState({ videoBar, mainContent: [mainContent], comments });
+        })
+        .catch((error) => {
+          console.log("did update error", error);
+        });
+    }
   }
 
+  //filter inside videolist component filter by ids
+
   render() {
+    if (this.state.currentVideo === null) return <h2>Video loading....</h2>;
     return (
       <>
         <HeroVideo currentVideo={this.state.currentVideo} />
@@ -96,12 +123,12 @@ class HomePage extends React.Component {
           <div>
             <Main currentVideo={this.state.currentVideo} />
             <CommentBox />
-            <PostedComments videoDetails={videoDetails} />
+            <PostedComments currentVideo={this.state.currentVideo} />
           </div>
           <div>
             <VideoList
-              videoDetails={videoDetails}
-              handleVideoChange={this.handleVideoChange}
+              currentVideo={this.state.currentVideo}
+              video={this.state.video}
             />
           </div>
         </div>

@@ -3,10 +3,6 @@ import logo from "../../assets/images/Logo/BrainFlix-logo.svg";
 import defaultPic from "../../assets/images/Images/Mohan-muruge.jpg";
 import buttonIcon from "../../assets/images/Icons/upload.svg";
 import { Link } from "react-router-dom";
-import HomePage from "../HomePage/HomePage";
-
-// ////////my link is not working?
-// <Link className="header__logo" to="/" exact component={HomePage}></Link> will not change pages
 
 export default function Header() {
   return (
