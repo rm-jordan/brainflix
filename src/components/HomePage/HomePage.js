@@ -49,13 +49,11 @@ class HomePage extends React.Component {
         )
         .then((response) => {
           console.log("didUpdate", response);
-          //when I clicked on the photo in the menu a response
           const mainContent = response.data;
           console.log("mainContent", mainContent);
           const comments = response.data.comments;
           console.log("comments", comments);
-          // above works when clicking on videolist
-          // need  a filter for the videoList
+
           const videoBar = this.state.video.filter(
             (video) => video.id !== this.props.match.params.id
           );

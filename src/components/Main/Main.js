@@ -32,7 +32,7 @@ export default function Main(props) {
 
       <div>
         <p>{props.currentVideo.description}</p>
-        <h3>3 Comments</h3>
+        <h3>{props.currentVideo.comments.length} Comments</h3>
       </div>
     </section>
   );
