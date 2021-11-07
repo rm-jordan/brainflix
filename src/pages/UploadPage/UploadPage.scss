@@ -1,9 +1,21 @@
-* {
-  border: 1px solid seagreen;
-}
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
 
 .upload {
   padding: 0.5rem 1rem;
+  border-top: 1px solid #e1e1e1;
+  @include tablet {
+    padding: 0.5rem 2rem;
+  }
+  @include desktop {
+    padding: 0.5rem 3rem;
+  }
+  &__header {
+    font-size: 1.5rem;
+    @include tablet {
+      font-size: 2.063rem;
+    }
+  }
   &__container--left {
     display: flex;
     flex-direction: column;
@@ -13,17 +25,37 @@
     display: block;
     border-radius: 4px;
   }
+  &__container__wrapper {
+    @include desktop {
+      display: flex;
+    }
+  }
   &__container--left {
     display: flex;
     flex-direction: column;
+    @include tablet {
+      width: 50%;
+    }
   }
   &__container--right {
     display: flex;
     flex-direction: column;
+    padding-top: 1rem;
+    @include tablet {
+      width: 100%;
+    }
+    @include desktop {
+      padding-top: 0.75rem;
+      margin-left: 1rem;
+    }
   }
   &__form__label {
     color: #afafaf;
     font-weight: 600;
+    padding-bottom: 0.25rem;
+    @include tablet {
+      font-size: 0.875rem;
+    }
   }
   &__form__input {
     height: 40px;
@@ -31,6 +63,9 @@
     font-family: "AvenirNext LT Pro";
     margin-bottom: 1rem;
     font-size: 0.875rem;
+    padding-left: 1rem;
+    background-color: #fafafa;
+    border: 1px solid #e1e1e1;
   }
   &__form__textarea {
     width: 100%;
@@ -40,11 +75,28 @@
     background-color: #fafafa;
     margin-bottom: 1rem;
     font-size: 0.875rem;
+    padding-left: 1rem;
+    border: 1px solid #e1e1e1;
+    @include desktop {
+      height: 8.2rem;
+    }
+  }
+  &__button__wrapper {
+    @include tablet {
+      display: flex;
+      justify-content: flex-end;
+    }
   }
 
   &__button__container {
     display: flex;
     flex-direction: column;
+    @include tablet {
+      display: flex;
+      flex-direction: row-reverse;
+      max-width: 40%;
+      min-width: 40%;
+    }
   }
   &__button--publish {
     width: 100%;
@@ -61,7 +113,7 @@
     top: 0;
     left: 0;
     margin-top: 0.3125rem;
-    margin-left: 0.125rem;
+    margin-left: 0.5rem;
   }
   &__button--cancel {
     width: 100%;
@@ -77,4 +129,8 @@
     text-decoration: none;
     color: inherit;
   }
+  // &__form__textarea textarea,
+  // &__form__input input {
+  //   color: #000000;
+  // }
 }
