@@ -8,18 +8,25 @@ export default function UploadPage() {
     <section className="upload">
       <h1>Upload Video</h1>
       <form>
-        <div className="upload__container-left">
-          <p>Video Thumbnail</p>
+        <div className="upload__container--left">
+          <h3>VIDEO THUMBNAIL</h3>
           <img className="upload__img" src={bicycle} alt="this is a bicycle" />
         </div>
         <div className="upload__container--right">
-          <label>Title Your Video</label>
-          <input placeholder="Add a title to your video"></input>
-          <label>Add a Video Description</label>
-          <textarea placeholder="Add a description to your video"></textarea>
+          <label className="upload__form__label">TITLE YOUR VIDEO</label>
+          <input
+            className="upload__form__input"
+            placeholder="Add a title to your video"
+          ></input>
+          <label className="upload__form__label">ADD A VIDEO DESCRIPTION</label>
+          <textarea
+            className="upload__form__textarea"
+            placeholder="Add a description to your video"
+          ></textarea>
         </div>
         <div className="upload__button__container">
           <button
+            className="upload__button--publish"
             type="submit"
             onClick={() => {
               alert("You have been notified of your upload!");
@@ -27,15 +34,15 @@ export default function UploadPage() {
           >
             <Link to="/">
               <img
-                className="header__button__icon"
+                className="upload__button__icon"
                 src={buttonIcon}
                 alt="upload icon"
               />
-              Publish
+              PUBLISH
             </Link>
           </button>
-          <button>
-            <Link to="/">Cancel</Link>
+          <button className="upload__button--cancel">
+            <Link to="/">CANCEL</Link>
           </button>
         </div>
       </form>

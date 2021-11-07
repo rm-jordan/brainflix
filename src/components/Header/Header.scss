@@ -99,6 +99,10 @@
       width: 51%;
     }
   }
+  &__button a {
+    text-decoration: none;
+    color: inherit;
+  }
   &__search {
     background-repeat: no-repeat;
     background-image: url(../../assets/images/Icons/search.svg);

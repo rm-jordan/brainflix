@@ -13,16 +13,68 @@
     display: block;
     border-radius: 4px;
   }
+  &__container--left {
+    display: flex;
+    flex-direction: column;
+  }
   &__container--right {
     display: flex;
     flex-direction: column;
   }
+  &__form__label {
+    color: #afafaf;
+    font-weight: 600;
+  }
+  &__form__input {
+    height: 40px;
+    border-radius: 4px;
+    font-family: "AvenirNext LT Pro";
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+  }
+  &__form__textarea {
+    width: 100%;
+    height: 6.25rem;
+    border-radius: 4px;
+    font-family: "AvenirNext LT Pro";
+    background-color: #fafafa;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+  }
+
   &__button__container {
     display: flex;
     flex-direction: column;
   }
+  &__button--publish {
+    width: 100%;
+    height: 2.5rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #0095ff;
+    color: #ffffff;
+    position: relative;
+  }
   &__button__icon {
-    width: 30px;
-    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 0.3125rem;
+    margin-left: 0.125rem;
+  }
+  &__button--cancel {
+    width: 100%;
+    height: 2.5rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #0095ff;
+  }
+  &__button--cancel a,
+  &__button--publish a {
+    text-decoration: none;
+    color: inherit;
   }
 }
