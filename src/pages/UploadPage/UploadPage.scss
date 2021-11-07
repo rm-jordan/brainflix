@@ -26,8 +26,12 @@
     border-radius: 4px;
   }
   &__container__wrapper {
+    @include tablet {
+      border-top: 1px solid #e1e1e1;
+    }
     @include desktop {
       display: flex;
+      border-bottom: 1px solid #e1e1e1;
     }
   }
   &__container--left {
@@ -43,10 +47,13 @@
     padding-top: 1rem;
     @include tablet {
       width: 100%;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #e1e1e1;
     }
     @include desktop {
       padding-top: 0.75rem;
       margin-left: 1rem;
+      border-bottom: none;
     }
   }
   &__form__label {
@@ -85,6 +92,7 @@
     @include tablet {
       display: flex;
       justify-content: flex-end;
+      padding-top: 1rem;
     }
   }
 
