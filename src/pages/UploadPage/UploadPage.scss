@@ -1,23 +1,28 @@
-.section-container {
+* {
+  border: 1px solid seagreen;
+}
+
+.upload {
   padding: 0.5rem 1rem;
-}
-
-img {
-  height: 300px;
-  width: 300px;
-}
-
-.header__button__icon {
-  width: 30px;
-  height: 30px;
-}
-
-.form-flex {
-  display: flex;
-  flex-direction: column;
-}
-
-.buttonflex {
-  display: flex;
-  flex-direction: column;
+  &__container--left {
+    display: flex;
+    flex-direction: column;
+  }
+  &__img {
+    width: 100%;
+    display: block;
+    border-radius: 4px;
+  }
+  &__container--right {
+    display: flex;
+    flex-direction: column;
+  }
+  &__button__container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__button__icon {
+    width: 30px;
+    height: 30px;
+  }
 }

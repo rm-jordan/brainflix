@@ -31,12 +31,14 @@ export default function Header() {
 
         <div className="header__button__container">
           <button className="header__button">
-            <img
-              className="header__button__icon"
-              src={buttonIcon}
-              alt="upload icon"
-            />
-            UPLOAD
+            <Link to="/upload">
+              <img
+                className="header__button__icon"
+                src={buttonIcon}
+                alt="upload icon"
+              />
+              UPLOAD
+            </Link>
           </button>
         </div>
         <img
