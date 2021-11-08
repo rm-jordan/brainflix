@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function VideoList(props) {
   return (
     <section className="videolist">
-      <h2>Next Videos</h2>
+      <h2 className="videolist__header">Next Videos</h2>
       <div className="videolist__container">
         <ul>
           {props.video.map((video) => {
