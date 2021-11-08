@@ -50,6 +50,7 @@ export default function UploadPage() {
                 PUBLISH
               </Link>
             </button>
+            <span></span>
             <button className="upload__button--cancel">
               <Link to="/">CANCEL</Link>
             </button>

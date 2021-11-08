@@ -115,6 +115,10 @@
     background-color: #0095ff;
     color: #ffffff;
     position: relative;
+    &:hover {
+      color: #ffffff;
+      background-color: #0065ad;
+    }
   }
   &__button__icon {
     position: absolute;
@@ -131,14 +135,18 @@
     border-radius: 4px;
     background-color: #ffffff;
     color: #0095ff;
+    &:hover {
+      color: #ffffff;
+      background-color: #0095ff;
+    }
   }
   &__button--cancel a,
   &__button--publish a {
     text-decoration: none;
     color: inherit;
   }
-  // &__form__textarea textarea,
-  // &__form__input input {
-  //   color: #000000;
-  // }
+}
+
+span {
+  width: 2.5rem;
 }
