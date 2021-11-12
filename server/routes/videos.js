@@ -1,4 +1,5 @@
 const express = require("express");
+const { restart } = require("nodemon");
 const router = express.Router();
 // const fs = require("fs");
 const app = express();
@@ -29,7 +30,6 @@ router.get("/", (req, res) => {
 
 // GET videos/:id
 router.get("/:id", (req, res) => {
-  res.send(req.params.id);
   // create a variable like the example foundVideo?
   // read up on possible array prototypes
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
@@ -41,7 +41,7 @@ router.get("/:id", (req, res) => {
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
   // find or filter it? <-- filter = new Array
   if (foundVideo) {
-    res.json(videos.find((video) => video.id === req.params.id));
+    res.json(videoData.find((video) => video.id === req.params.id));
   } else {
     res.json({ error: `ID ${req.params.id} not found` });
   }
@@ -49,9 +49,29 @@ router.get("/:id", (req, res) => {
 
 // still need to do the POST/videos
 
-// router.post("/", (req, res) => {
-//   console.log(req.body);
-//   create a variable and make an object and return it like above? too much code?
-// });
+router.post("/", (req, res) => {
+  // console.log(req.body);
+  //   create a variable and make an object and return it like above? too much code?
+  // send title and description rest is hardcoded
+  const getVideo = {
+    id: req.body.id,
+    title: req.body.title,
+    channel: req.body.channel,
+    image: req.body.image,
+    description: req.body.description,
+    views: "0",
+    likes: "0",
+    duration: "6:20",
+    video: "https://project-2-api.herokuapp.com/stream",
+    // need to update the timestamp
+    timestamp: new Date().getTime(),
+    comments: [],
+  };
+
+  console.log("showing getVideo", getVideo);
+  videoData.push(getVideo); // <---
+  //need to write this into a file
+  res.json(getVideo);
+});
 
 module.exports = router;
