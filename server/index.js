@@ -1,25 +1,25 @@
-//index server
 const express = require("express");
-
-// const routeName = require('./routes/routeName');
-
 const app = express();
+const videoRoute = require("./routes/videos");
+const PORT = 3000;
+// const cors = require('cors')
 
-// API INFO FROM SPRINT -2
-// `https://project-2-api.herokuapp.com/videos?api_key=47ffd825-f3d6-483b-ae09-531887cd1206`
+// something is a bit messed up
+// app.use(cors())
+//static folder access
 
-// going to need to establish a few routes
+// do I need to do this or can I run it straight from the json file?
+// app.use(express.static("public"));
 
-// use the port 3000? <- the local host?
+//route for the videos <---working
+app.use("/videos", videoRoute);
 
-//access the public folder which is static and get the photos
+// home route, doesn't do much other than return a hello world message
+app.get("/", (req, res) => {
+  res.json({ message: "Hello, World!" });
+});
 
-// json call
-
-//app.use() <-- one for each of the routes
-
-//app.get('/', (req, res) => {
-//  res.send('is this working?')
-// })
-
-// then  I need to listen for it on the port
+//server and port check
+app.listen(PORT, () => {
+  console.log("app running on port " + PORT);
+});
