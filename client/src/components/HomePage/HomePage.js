@@ -11,27 +11,22 @@ class HomePage extends React.Component {
   state = {
     video: [],
     currentVideo: null,
-    comments: [],
   };
 
   componentDidMount() {
     axios
-      .get(
-        `https://project-2-api.herokuapp.com/videos?api_key=47ffd825-f3d6-483b-ae09-531887cd1206`
-      )
+      .get(`http://localhost:8080/videos`)
       .then((response) => {
-        this.setState({ video: response.data }, () => {
-          this.getVideo(this.state.video[0].id);
-        });
+        this.setState({ video: response.data });
+        const videoId = this.props.match.params.id || response.data[0].id;
+        this.getVideo(videoId);
       })
       .catch((error) => console.log("there is an error", error));
   }
 
   getVideo = (id) => {
     axios
-      .get(
-        `https://project-2-api.herokuapp.com/videos/${id}?api_key=47ffd825-f3d6-483b-ae09-531887cd1206`
-      )
+      .get(`http://localhost:8080/videos/${id}`)
       .then((response) => {
         this.setState({ currentVideo: response.data });
         console.log("initial response", response);
@@ -41,27 +36,10 @@ class HomePage extends React.Component {
       });
   };
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.match !== this.props.match) {
-      axios
-        .get(
-          `https://project-2-api.herokuapp.com/videos/${this.props.match.params.id}?api_key=47ffd825-f3d6-483b-ae09-531887cd1206`
-        )
-        .then((response) => {
-          console.log("didUpdate", response);
-          const mainContent = response.data;
-          console.log("mainContent", mainContent);
-          const comments = response.data.comments;
-          console.log("comments", comments);
-
-          const videoBar = this.state.video.filter(
-            (video) => video.id !== this.props.match.params.id
-          );
-          this.setState({ videoBar, currentVideo: response.data, comments });
-        })
-        .catch((error) => {
-          console.log("did update error", error);
-        });
+  componentDidUpdate(prevProps, prevState) {
+    const videoId = this.props.match.params.id || this.state.video[0].id;
+    if (prevState.currentVideo && prevState.currentVideo.id !== videoId) {
+      this.getVideo(videoId);
     }
   }
 

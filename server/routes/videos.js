@@ -50,9 +50,6 @@ router.get("/:id", (req, res) => {
 // still need to do the POST/videos
 
 router.post("/", (req, res) => {
-  // console.log(req.body);
-  //   create a variable and make an object and return it like above? too much code?
-  // send title and description rest is hardcoded
   const getVideo = {
     id: req.body.id,
     title: req.body.title,
@@ -71,7 +68,8 @@ router.post("/", (req, res) => {
   console.log("showing getVideo", getVideo);
   videoData.push(getVideo); // <---
   //need to write this into a file
-  res.json(getVideo);
+
+  res.json(getVideo(req.body));
 });
 
 module.exports = router;

@@ -3,14 +3,13 @@ const app = express();
 const videoRoute = require("./routes/videos");
 const PORT = 8080;
 const cors = require("cors");
-const getVideo = require("./routes/videos");
 
 // something is a bit messed up
 app.use(cors());
 //static folder access
 
-app.use(express.static("public"));
 app.use(express.json());
+app.use(express.static("public"));
 
 //route for the videos <---working
 // need to mirror axios requests
