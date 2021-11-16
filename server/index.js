@@ -14,7 +14,6 @@ app.use(express.static("public"));
 //route for the videos <---working
 // need to mirror axios requests
 app.use("/videos", videoRoute);
-app.use("/upload", videoRoute); // < same as axios?
 
 // home route, doesn't do much other than return a hello world message
 app.get("/", (req, res) => {
