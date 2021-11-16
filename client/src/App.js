@@ -17,7 +17,7 @@ class App extends Component {
             <Route path="/" exact component={HomePage} />
             <Route path="/videos" exact component={HomePage} />
             <Route path="/videos/:id" exact component={HomePage} />
-            <Route path="/upload" exact component={UploadPage}></Route>
+            <Route path="/upload" exact component={UploadPage} />
           </Switch>
         </Router>
       </>
